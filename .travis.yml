@@ -1,0 +1,36 @@
+language: node_js
+
+cache: yarn
+
+node_js:
+  - '10'
+  - '11'
+  - '8'
+
+stages:
+  - name: install
+  - name: test
+  - name: build
+  - name: release
+    if: branch = master
+
+jobs:
+  include:
+    - stage: install
+      script: yarn install
+      skip_cleanup: true
+
+    - stage: test
+      script: yarn test:prod
+      skip_cleanup: true
+
+    - stage: build
+      script: yarn build
+      skip_cleanup: true
+
+    - stage: release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - yarn semantic-release
