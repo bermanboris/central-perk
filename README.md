@@ -13,5 +13,5 @@ http POST https://api-qt6pdk5x6q-uc.a.run.app/tasks address="New York" name="Joh
 ### Getting customer tasks from previous week (by phone number)
 
 ```bash
-http GET https://api-qt6pdk5x6q-uc.a.run.app/tasks phone==+12345678901
+http GET https://api-qt6pdk5x6q-uc.a.run.app/tasks phone=="+12345678901"
 ```
