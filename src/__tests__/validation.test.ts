@@ -7,7 +7,11 @@ describe('task validation', () => {
   });
 
   test('incorrect task', () => {
-    const payload = { name: 'John', phone: '+123456789' };
-    expect(isTaskValid(payload)).toBe(false);
+    expect(isTaskValid({ name: 'John' })).toBe(false);
+    expect(isTaskValid({ address: 'New York' })).toBe(false);
+    expect(isTaskValid({ phone: '+123456789' })).toBe(false);
+    expect(isTaskValid({ name: 'John', phone: '+123456789' })).toBe(false);
+    expect(isTaskValid({ phone: '+123456789', address: 'New York' })).toBe(false);
+    expect(isTaskValid({ name: 'John', address: 'New York' })).toBe(false);
   });
 });

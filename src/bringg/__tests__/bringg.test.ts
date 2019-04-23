@@ -1,5 +1,4 @@
 import { config } from '../../config';
-// import { httpClient } from '../../http-client';
 import { httpClient } from '../../http-client';
 import { Bringg } from '../bringg';
 import { Customer, TaskRequest } from '../types';
@@ -73,12 +72,4 @@ test('creates task', async () => {
       title: 'Coffee Delivery',
     })
   );
-});
-
-test('returns customer tasks', async () => {
-  (httpClient.get as jest.Mock).mockImplementation(() => ({ data: [] }));
-  for await (const tasks of Bringg.tasks()) {
-    console.log(tasks);
-  }
-  console.log('hi');
 });
