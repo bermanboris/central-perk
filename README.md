@@ -21,9 +21,9 @@ npm install
 
 ## Running the application locally
 
-> Before running the application, create make sure you have ".env" file in root directory
-> (same directory as package.json file). This file has to include environment variables
-> that are necessary for API to work. You can use ".env.example" file as your boilerplate.
+> Before running the application, make sure you have ".env" file in root directory (same
+> directory as package.json file). This file has to include environment variables that are
+> necessary for API to work. You can use ".env.example" file as your boilerplate.
 
 ```bash
 npm run watch
