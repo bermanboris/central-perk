@@ -9,7 +9,7 @@ const tasksRouter = Router();
 const debug = createLogger('tasks');
 
 /**
- * Returns all customer tasks based on his phone number which has to be passed in query parameters
+ * Returns customer tasks from previous week based on his phone number which has to be passed as a query parameters
  */
 tasksRouter.get('/', async (req, res) => {
   const customerTasks: Task[] = [];
@@ -22,9 +22,9 @@ tasksRouter.get('/', async (req, res) => {
   try {
     for await (const tasks of Bringg.tasks(customerPhone)) {
       for (const task of tasks) {
-        const lastWeek = getISOWeek(new Date()) - 1;
+        const lastWeek = getISOWeek(Date.now()) - 1;
         const taskCreatedWeek = getISOWeek(task.created_at);
-        debug({ lastWeek, taskCreatedWeek });
+
         /**
          * If task was created _before_ previous week, we break out of the loop.
          */
@@ -51,6 +51,10 @@ tasksRouter.get('/', async (req, res) => {
   }
 });
 
+/**
+ * Adds new task (order) to Bringg. Creates new customer first, before creating the actual
+ * task.
+ */
 tasksRouter.post('/', async (req, res) => {
   const taskRequest: TaskRequest = req.body;
 
