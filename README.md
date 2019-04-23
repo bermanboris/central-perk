@@ -41,12 +41,12 @@ npm run test
 
 ### Adding new task (and customer)
 
-> If you will try to add new customer with existing phone number, for some reason API will
-> return 401 error. This is unexpected behaviour, and it is not handled by the
+> If you will try to add new customer with existing phone number, for some reason Bringg
+> API will return 401 error. This is unexpected behaviour, and it is not handled by the
 > application.
 
 > Phone number has to be in **very** specific format (+xxx-xxxx-xxxx), otherwise it won't
-> be added to the customer object at all.
+> be added to the customer object by Bringg at all.
 
 ```bash
 http POST https://api-qt6pdk5x6q-uc.a.run.app address="New York" name="John" phone="123-4567-8901"
