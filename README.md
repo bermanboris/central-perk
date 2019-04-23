@@ -28,7 +28,7 @@ npm install
 ```bash
 npm run watch
 
-# App is running at http://0.0.0.0:8080
+# App is running at http://127.0.0.1:8080
 ```
 
 ## Running the tests
