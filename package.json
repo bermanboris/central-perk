@@ -72,6 +72,8 @@
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.6",
     "@types/uuid": "^3.4.4",
+    "babel-jest": "^24.7.1",
+    "babel-plugin-jest-hoist": "^24.6.0",
     "commitizen": "^3.0.7",
     "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
