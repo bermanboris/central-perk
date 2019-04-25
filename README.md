@@ -13,7 +13,7 @@ application locally. You can find HTTPie examples below.
 
 ## Installation
 
-Install dependencies using yarn:
+Install dependencies using npm:
 
 ```bash
 npm install
